@@ -18,12 +18,14 @@ Example Code for your PhantomCSS runner
 ---------------------------------------
 
 In your test runner, simply load the tests and execute them:
-var example_tests = require('./ExampleTest.js');
-var tests = [example_tests.getTestCase()];
-var baseline_url_root = "<your URL>";
 
-// Loop over all the tests and execute
-tests.forEach(function(test) {
+
+    var example_tests = require('./ExampleTest.js');
+    var tests = [example_tests.getTestCase()];
+    var baseline_url_root = "<your URL>";
+    
+    // Loop over all the tests and execute
+    tests.forEach(function(test) {
         casper.
             then(function() {
                 console.log('Starting ' + test.getName() + ' tests');
@@ -34,5 +36,5 @@ tests.forEach(function(test) {
             then(function() {
                 test.runTests(phantomcss, casper);
             });
-    }
-);
+        }
+    );
