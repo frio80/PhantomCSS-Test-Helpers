@@ -4,7 +4,7 @@ exports.getBaseTestCase = function() {
     return BaseTestCase;
 };
 
-var test_structures = require('./../CommonTestStructures');
+var test_structures = require('./CommonTestStructures.js');
 
 /**
  @constructor
