@@ -87,12 +87,7 @@ BaseTestCase.prototype.setup = function(tests_data) {
  */
 
 BaseTestCase.prototype.runTests = function(phantomcss, casper) {
-    var self = this;
-
-    casper.
-        then(function() {
-            self.getTests().forEach(function(test_case) {
-                casper.then(test_case.test(phantomcss, casper));
-            });
-        });
+    this.getTests().forEach(function(test_case) {
+        casper.then(test_case.test(phantomcss, casper))
+    });
 };
