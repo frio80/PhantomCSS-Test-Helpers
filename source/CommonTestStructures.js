@@ -67,6 +67,7 @@ test_structures.findTypeAndShoot = function(selector, timeToWait, hideSelector, 
             return {
                 find : obj.find,
                 type : obj.type,
+                click : obj.click,
                 shoot : obj.shoot
             };
         },
@@ -84,7 +85,7 @@ test_structures.findTypeAndShoot = function(selector, timeToWait, hideSelector, 
         return function() {
             casper.waitForSelector(selectors.find,
                 function success() {
-                    casper.sendKeys(selectors.type, key);
+                    casper.sendKeys(selectors.click, selectors.type);
                     phantomcss.screenshot(selector.shoot, name);
                 },
                 function timeout() {
